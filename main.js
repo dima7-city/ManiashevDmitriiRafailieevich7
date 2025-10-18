@@ -15,3 +15,4 @@ console.log(typeof(age));
 console.log(typeof(isFalse));
 console.log(typeof(car));
 console.log(typeof(home));
+kndfkdfn
