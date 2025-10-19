@@ -1,8 +1,8 @@
-let name = "Dmitrii";
-let age = 33;
-let isFalse = false;
-let car = null;
-let home = undefined;
+const name = "Dmitrii";
+const age = 33;
+const isFalse = false;
+const car = null;
+const home = undefined;
 
 console.log(name);
 console.log(age);
