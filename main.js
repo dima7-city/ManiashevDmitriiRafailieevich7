@@ -16,7 +16,7 @@ console.log(typeof(isFalse));
 console.log(typeof(car));
 console.log(typeof(home));
 
-//8.Добавить примеры явного преобразования типов.
+// 8.Добавить примеры явного преобразования типов.
 // Строковое преобразование.
 
 console.log(typeof String(age)); // число 33 можно преобразовать в тип данных "строка", значение будет "33";
@@ -37,3 +37,25 @@ console.log(typeof Boolean(age)); // число 33 можно преобразо
 console.log(typeof Boolean(name)); // имя Dmitrii можно преобразовать в тип данных "boolean", но значение будет true;
 console.log(typeof Boolean(car)); // null можно преобразовать в тип данных "boolean", но значение будет false;
 console.log(typeof Boolean(home)); // undefined можно преобразовать в тип данных "boolean",но значение будет false.
+
+// 9.Добавить примеры неявного преобразования типов.
+let a = 1;
+let b = true;
+let c = false;
+
+console.log(a+(b+c)); //значение будет 2, так как true это единица, а false это ноль (1+(1+0))=2 (если есть + с хотя бы одним "boolean", все другие значения автоматически превращаются в числа);
+console.log(typeof(a+(b+c))); // а тип бует number;
+
+let d = 1;
+let e = 3;
+let f = "груши";
+
+console.log(d+e+f); //значение будет "4 груши" (если есть + с хотя бы одной "строкой", все другие значения автоматически превращается в строку);
+console.log(typeof(d+e+f)); // а тип бует string;
+
+let g = null;
+let h = 5;
+let i = undefined;
+
+console.log(g+h+i); //значение будет NaN;
+console.log(typeof(g+h+i)); // а тип бует number;
