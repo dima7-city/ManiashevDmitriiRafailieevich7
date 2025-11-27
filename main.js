@@ -1,73 +1,205 @@
-const name = "Dmitrii";
-const age = 33;
-const isFalse = false;
-const car = null;
-const home = undefined;
+// Маняшев Дмитрий
+// Домашнее задание №3 - Условные и логические операторы, циклы
+// Уровень 1 - Простой
+// Цель: закрепить базовый синтаксис if, else, switch, while, for и научиться рассуждать лигически.
+// 1. Условные операторы
+// Напиши программу, которая спрашивает возраст пользователя через prompt () и выводит:
+// Если < 18 → "Доступ запрещён!"
+// Иначе → "Доступ разрешён!"
 
-console.log(name);
-console.log(age);
-console.log(isFalse);
-console.log(car);
-console.log(home);
+const userAge = Number(prompt("Сколько тебе лет?"));
 
-console.log(typeof(name));
-console.log(typeof(age));
-console.log(typeof(isFalse));
-console.log(typeof(car));
-console.log(typeof(home));
+if (userAge < 18) {
+  console.log("Доступ запрещён!");
+} else {
+  console.log("Доступ разрешён!");
+}
 
-// 8.Добавить примеры явного преобразования типов.
-// Строковое преобразование.
+// 2. Перепишите предыдущую задачу с использование тернарного оператора ? :
 
-console.log(typeof String(age)); // число 33 можно преобразовать в тип данных "строка", значение будет "33";
-console.log(typeof String(isFalse)); // false можно преобразовать в тип данных "строка", значение будет "false";
-console.log(typeof String(car)); // null можно преобразовать в тип данных "строка", значение будет "null";
-console.log(typeof String(home)); // undefined можно преобразовать в тип данных "строка", значение будет "undefined".
+const age = Number(prompt("Сколько тебе лет?"));
 
-// Численное преобразование.
+const rezult = age > 18 ? "Доступ разрешён!" : "Доступ запрещён!";
+console.log(rezult);
 
-console.log(typeof Number(name)); // имя Dmitrii можно преобразовать в тип данных "число", но значение будет NaN;
-console.log(typeof Number(isFalse)); // false можно преобразовать в тип данных "число", но значение будет 0;
-console.log(typeof Number(car)); // null можно преобразовать в тип данных "число", но значение будет 0;
-console.log(typeof Number(home)); // undefined можно преобразовать в тип данных "число",но значение будет NaN.
+// 3. Конструкция switch
+// Напиши код, который принимает через prompt () день недели (число от 1 до 7) и выводит название дня:
+// 1 - Понедельник, 2 - Вторник, ... 7 - Воскресенье.
+// Если введено число вне диапазона - выведи "Ошибка: такого дня нет!"
 
-// Логическое преобразование.
+let day = Number(prompt("Введите число, что бы оно соответствовало дню недели"));
 
-console.log(typeof Boolean(age)); // число 33 можно преобразовать в тип данных "boolean", но значение будет true;
-console.log(typeof Boolean(name)); // имя Dmitrii можно преобразовать в тип данных "boolean", но значение будет true;
-console.log(typeof Boolean(car)); // null можно преобразовать в тип данных "boolean", но значение будет false;
-console.log(typeof Boolean(home)); // undefined можно преобразовать в тип данных "boolean",но значение будет false.
+switch (day) {
+  case 1:
+    console.log("Понедельник");
+    break;
+  case 2:
+    console.log("Вторник");
+    break;
+  case 3:
+    console.log("Среда");
+    break;
+  case 4:
+    console.log("Четверг");
+    break;
+  case 5:
+    console.log("Пятница");
+    break;
+  case 6:
+    console.log("Суббота");
+    break;
+  case 7:
+    console.log("Воскресенье");
+    break;
+  default:
+    console.log("Ошибка: такого дня нет!");
+}
 
-// 9.Добавить примеры неявного преобразования типов.
-let a = 1;
-let b = true;
-let c = false;
+// 4. Цикл while
+// Напиши цикл, который выводит числа от 1 до 5 включительно.
 
-console.log(a+(b+c)); //значение будет 2, так как true это единица, а false это ноль (1+(1+0))=2 (если есть + с хотя бы одним "boolean", все другие значения автоматически превращаются в числа);
-console.log(typeof(a+(b+c))); // а тип бует number;
+let num = 1;
 
-let d = 1;
-let e = 3;
-let f = "груши";
+while (num <= 5) {
+  console.log(num);
+  num++;
+}
 
-console.log(d+e+f); //значение будет "4 груши" (если есть + с хотя бы одной "строкой", все другие значения автоматически превращается в строку);
-console.log(typeof(d+e+f)); // а тип бует string;
+// 5. Цикл for
+// Напиши цикл for, который выводит квадраты чисел от 1 до 10 (например, 1 4 9 16 ...).
 
-let g = null;
-let h = 5;
-let i = undefined;
+for (let number = 1; number <=10; number++) {
+  console.log(number ** 2);
+}
 
-console.log(g+h+i); //значение будет NaN;
-console.log(typeof(g+h+i)); // а тип бует number.
+// Уровень 2 - Умеренный
+// Цель: научиться комбинировать условия, использовать break, continue, логические операторы
+// и считать с помощью циклов.
+// 1. Логические операторы
+// Напиши код, который определяет, может ли пользователь войти на сайт:
+// const isAdmin = true;
+// const hasToken = false;
+// Если пользователь админ или имеет токен, вывести "Доступ разрешён", 
+// иначе - "Нет доступа".
 
-// 10. Добавить примеры операторов сравнения.
+const isAdmin = true;
+const hasToken = false;
 
-let j = "хлеб";
-let k = "сахар";
+const admin = String(prompt("Введите ваше имя"));
 
-console.log(j>k); // При сравнение строчных переменных между собой. Сначала сравниваются первые символы строк. Если первый символ первой строки больше (меньше), чем первый символ второй, то первая строка больше (меньше) второй. Сравнение завершено. В нашем случае будет true.
+if (isAdmin || hasToken) {
+  alert("Доступ разрешён");
+} else {
+  alert("Нет доступа");
+}
 
-let l = 5;
-let m = null;
+// 2. Комбинации &&, ||, !
+// Напиши выражение, которое вернёт true, если переменная х находится в
+// диапазоне от 10 до 20 включительно и не равна 15.
+// Проверь работу кода с несколькими значениями.
 
-console.log(l===m); // Если l и m имеют разные типы, то проверка l === m немедленно возвращает false безпопытки их преобразования.
+let x = Number(prompt("Введите число"));
+
+if (x >= 10 && x <= 20 && x !==15) {
+  alert("Верно(true)");
+} else {
+  alert("Неверно(false)");
+}
+
+// 3. Цикл с условием
+// Пользователь вводит число N.
+// Используя цикл while, выведи все числа от N до 0 в консоль.
+
+let n = Number(prompt("Введите число"));
+
+while (n >= 0) {
+  console.log(n);
+  n--;
+}
+
+// 4. break и continue
+// Используя цикл for, выведи все числа от 1 до 10,
+// но:
+// - если число равно 7 - пропусти итерацию (continue)
+// - если число равно 9 - прерви цикл (break)
+
+for (let i = 1; i <= 10; i++) {
+  if (i === 7) continue;
+  if (i === 9) break;
+  alert(i);
+}
+
+// 5. Практика: длина наибольшего отрезка
+// Задано три числа a, b, c.
+// Определи и выведи длину наибольшего из трёх отрезков.
+
+const a = 7;
+const b = 19;
+const c = 77;
+
+let maxSection;
+
+if (a >= b && a >= c) {
+  maxSection = a;
+} else if (b >= a && b >= c) {
+  maxSection = b;
+} else {
+  maxSection = c;
+}
+
+// Уровень 3 - Сложный
+// Цель: объединить в одной задаче логические операторы, вложенные условия, циклы и ветвления.
+// 1. Система рекомендаций по погоде.
+// Создайте переменную temperature (в градусах Цельсия).
+// Выведи рекомендация по температуре:
+// ниже -30: "Оставайтесь дома!"
+// от -30 до -10: "Сегодня холодно"
+// от -10 до +5: "Не холодно"
+// от +5 до +15: "Тепло"
+// от +15 до +25: "Очень тепло"
+// от +25 до +35: "Жарко"
+// 35 и выше: "Пекло!"
+
+let temperature = Number(prompt("Введите температур в градусах Цельсия"));
+
+if (temperature < -30) {
+  console.log("Оставайтесь дома!");
+} else if (temperature >= -30 && temperature < -10) {
+  console.log("Сегодня холодно");
+} else if (temperature >= -10 && temperature < 5) {
+  console.log("Не холодно");
+} else if (temperature >= 5 && temperature < 15) {
+  console.log("Тепло");
+} else if (temperature >= 15 && temperature < 25) {
+  console.log("Очень тепло");
+} else if (temperature >= 25 && temperature < 35) {
+  console.log("Жарко");
+} else {
+  console.log("Пекло!");
+}
+
+// 2. Роль пользователя(switch)
+// Пусть есть переменная role , принимающая одно из значений:
+// "admin" , "manager" , "user" , "guest" .
+// С помощью switch выведи персонализированное сообщение, например:
+// admin → "Добро пожаловать, администратор!"
+// manager → "Привет, менеджер!"
+// user → "Рады видеть вас снова!"
+// guest → "Пожалуйста, войдите в систему"
+
+let role = String(prompt("Кто вы? (admin , manager , user , guest)"));
+
+switch (role) {
+  case "admin":
+    console.log("Добро пожаловать, администратор!");
+    break;
+  case "manager":
+    console.log("Привет, менеджер!");
+    break;
+  case "user":
+    console.log("Рады видеть вас снова!");
+    break;
+  case "guest":
+    console.log("Пожалуйста, войдите в систему");
+    break;
+}
